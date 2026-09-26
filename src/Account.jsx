@@ -77,6 +77,7 @@ export function AuthPage({ register = false }) {
         <h2>{register ? "Crie sua conta" : "Entre na sua conta"}</h2>
         <p>{register ? "Preencha seus dados para começar." : "Acompanhe os vínculos que você está construindo."}</p>
         <p className="demo-note">Prévia demonstrativa: use dados fictícios. Os cadastros duram apenas até recarregar a página.</p>
+        {!register && <p className="demo-note">Acesso de usuário de demonstração: <strong>usuario@abrigo.demo</strong><br />Senha: <strong>UsuarioDemo123!</strong></p>}
         {!register && <p className="demo-note">Acesso admin de demonstração: <strong>admin@abrigo.demo</strong><br />Senha: <strong>AdminDemo123!</strong></p>}
         <form className="application-form account-form" onSubmit={submit}>
           {register && <fieldset><legend>Seus dados</legend>

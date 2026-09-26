@@ -1112,7 +1112,15 @@ function App() {
     { id: "cleaning", name: "Desinfetante", category: "Limpeza", unit: "L", quantity: 5, minimum: 10 },
   ]);
   const [movements, setMovements] = useState([]);
-  const [accounts, setAccounts] = useState([]);
+  const [accounts, setAccounts] = useState(() => [{
+    id: "demo-user",
+    name: "Usuário Demonstração",
+    email: "usuario@abrigo.demo",
+    digest: "fc2ac3d6bdbd04242c4ac44a655523ebdee435c02823452475a90c1338e484a3",
+    cpf: "", phone: "", cep: "", neighborhood: "", street: "",
+    number: "", complement: "", city: "Joinville", state: "SC",
+    favorites: [], requests: [],
+  }]);
   const [user, setUser] = useState(null);
   const [pending, setPending] = useState(null);
   const account = accounts.find((item) => item.id === user);
