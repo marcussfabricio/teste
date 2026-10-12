@@ -1,0 +1,41 @@
+.site-footer {
+  padding-bottom: calc(3rem + env(safe-area-inset-bottom, 0px)) !important;
+  background: var(--footer-background);
+  color: #fff;
+}
+
+.footer-logo {
+  width: min(150px, 42vw);
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+.site-footer li a {
+  color: #b0b0b0;
+  text-decoration: none;
+  transition: color .2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .site-footer li a:hover {
+    color: var(--brand-sage);
+  }
+}
+
+.site-footer .btn.btn-outline-primary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 12px;
+  background: var(--button-color) !important;
+  border-color: var(--button-color) !important;
+  color: #fff !important;
+}
+
+.site-footer .btn.btn-outline-primary:hover,
+.site-footer .btn.btn-outline-primary:focus-visible {
+  background: var(--button-hover) !important;
+  border-color: var(--button-hover) !important;
+  color: #fff !important;
+}

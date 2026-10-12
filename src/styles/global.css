@@ -1,0 +1,472 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --primary-color: #9d3b35;
+  --primary-hover: #7f2f2a;
+  --primary-soft: #f4e8e6;
+  --secondary-color: #5f824f;
+  --secondary-hover: #4b693e;
+  --secondary-soft: #e9f2e4;
+  --brand-sage: #b7d7a8;
+  --accent-color: #f59a2e;
+  --bg-color-ligth: #eef5ea;
+  --alternative-color: #f59a2e;
+  --text-color: #302d2c;
+  --text-muted: #6f6a67;
+  --background-color: #f8faf6;
+  --surface-color: #ffffff;
+  --border-color: #dce6d7;
+  --footer-background: #302d2c;
+  --card-shadow: 0 10px 30px rgba(65, 74, 57, 0.1);
+  --card-shadow-hover: 0 18px 42px rgba(65, 74, 57, 0.18);
+  --border-radius-pill: 12px;
+  --border-radius-lg: 20px;
+  --bs-primary: #9d3b35;
+  --bs-primary-rgb: 157, 59, 53;
+  --bs-secondary: #5f824f;
+  --bs-secondary-rgb: 95, 130, 79;
+  --bs-warning: #f59a2e;
+  --bs-warning-rgb: 245, 154, 46;
+  --bs-body-color: #302d2c;
+  --bs-body-bg: #f8faf6;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: clip;
+}
+
+body {
+  min-width: 320px;
+  overflow-x: clip;
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+button,
+a,
+[role="button"] {
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+button:active,
+.btn:active,
+[role="button"]:active {
+  transform: scale(0.98);
+}
+
+img {
+  max-width: 100%;
+}
+
+.site-navbar {
+  padding-top: max(0.5rem, env(safe-area-inset-top, 0px)) !important;
+  border-bottom: 1px solid color-mix(in srgb, var(--brand-sage) 55%, transparent);
+}
+
+.brand-logo {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.brand-wordmark {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+
+.brand-name {
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.brand-city {
+  margin-top: 4px;
+  color: var(--secondary-color);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--primary-color);
+  --bs-btn-border-color: var(--primary-color);
+  --bs-btn-hover-bg: var(--primary-hover);
+  --bs-btn-hover-border-color: var(--primary-hover);
+  --bs-btn-active-bg: var(--primary-hover);
+  --bs-btn-active-border-color: var(--primary-hover);
+  --bs-btn-disabled-bg: var(--primary-color);
+  --bs-btn-disabled-border-color: var(--primary-color);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--primary-color);
+  --bs-btn-border-color: var(--primary-color);
+  --bs-btn-hover-bg: var(--primary-color);
+  --bs-btn-hover-border-color: var(--primary-color);
+  --bs-btn-active-bg: var(--primary-hover);
+  --bs-btn-active-border-color: var(--primary-hover);
+}
+
+.btn-warning {
+  --bs-btn-bg: var(--accent-color);
+  --bs-btn-border-color: var(--accent-color);
+  --bs-btn-hover-bg: #dd8420;
+  --bs-btn-hover-border-color: #dd8420;
+  --bs-btn-color: #302d2c;
+}
+
+.text-primary { color: var(--primary-color) !important; }
+.text-warning { color: var(--accent-color) !important; }
+.bg-primary { background-color: var(--primary-color) !important; }
+.bg-warning { background-color: var(--accent-color) !important; }
+
+.pet-showcase-section {
+  border: 1px solid var(--border-color);
+  background: linear-gradient(145deg, var(--surface-color), var(--secondary-soft)) !important;
+}
+
+.pet-section-title {
+  color: var(--text-color);
+  font-size: clamp(1.1rem, 4vw, 1.45rem);
+  white-space: nowrap;
+}
+
+.site-navbar .navbar-toggler {
+  color: var(--text-color);
+  font-size: 1.45rem;
+}
+
+.catalog-pagination {
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scrollbar-width: thin;
+}
+
+.catalog-pagination .pagination {
+  flex-wrap: nowrap;
+  padding: 4px;
+  margin-bottom: 0;
+}
+
+.catalog-pagination .page-link {
+  min-width: 44px;
+  min-height: 44px;
+  display: grid;
+  place-items: center;
+  color: var(--primary-color);
+}
+
+.catalog-pagination .page-item.active .page-link {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* Título do Hero — responsivo */
+.hero-heading {
+  font-size: 2.25rem;
+}
+
+@media (min-width: 768px) {
+  .hero-heading {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .hero-heading {
+    font-size: 4.5rem;
+  }
+}
+
+.btn-custom-pet {
+  transition: all 0.3s ease-in-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-custom-pet:hover {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(157, 59, 53, 0.25);
+  }
+}
+
+/* Indicador de status no footerAdmin */
+.status-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.status-online {
+  background-color: #28a745;
+  box-shadow: 0 0 0 rgba(40, 167, 69, 0.4);
+  animation: pulse-green 2s infinite;
+}
+
+.status-offline {
+  background-color: #dc3545;
+  box-shadow: 0 0 0 rgba(220, 53, 69, 0.4);
+  animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-green {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(40, 167, 69, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(40, 167, 69, 0); }
+}
+
+@keyframes pulse-red {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(220, 53, 69, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+}
+
+/* ===================== MODO ESCURO =====================
+   Ativado por data-bs-theme="dark" no <html> (ThemeToggle/main.jsx).
+   Componentes do Bootstrap 5.3 já adaptam sozinhos; aqui viramos os tokens
+   da marca e as utilidades "fixas" que o projeto usa muito (bg-white, bg-light,
+   text-dark, navbar-light). */
+[data-bs-theme="dark"] {
+  --primary-color: #d77a72;
+  --primary-hover: #e18b84;
+  --primary-soft: #382522;
+  --secondary-color: #a8ca98;
+  --secondary-soft: #22301f;
+  --background-color: #171a16;
+  --surface-color: #20251f;
+  --text-color: #eef2eb;
+  --text-muted: #b7beb2;
+  --border-color: #384335;
+  --bg-color-ligth: #22301f;
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+  --card-shadow-hover: 0 18px 42px rgba(0, 0, 0, 0.38);
+}
+
+[data-bs-theme="dark"] body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+[data-bs-theme="dark"] .bg-white { background-color: #1e242b !important; }
+[data-bs-theme="dark"] .bg-light { background-color: #1a1f26 !important; }
+[data-bs-theme="dark"] .text-dark { color: #e9ecef !important; }
+
+/* Mantém texto escuro nas badges/botões com fundo colorido (contraste) */
+[data-bs-theme="dark"] .badge.bg-warning.text-dark,
+[data-bs-theme="dark"] .bg-warning.text-dark { color: #212529 !important; }
+
+[data-bs-theme="dark"] .border,
+[data-bs-theme="dark"] .border-top,
+[data-bs-theme="dark"] .border-bottom,
+[data-bs-theme="dark"] .border-end,
+[data-bs-theme="dark"] .border-start { border-color: #2c343d !important; }
+
+/* Navbar pública (navbar-light bg-white hardcoded) */
+[data-bs-theme="dark"] .navbar.bg-white { background-color: #1e242b !important; }
+[data-bs-theme="dark"] .navbar-light .nav-link { color: #cfd6dd; }
+[data-bs-theme="dark"] .navbar-light .nav-link:hover { color: #ffffff; }
+[data-bs-theme="dark"] .navbar-light .navbar-toggler-icon {
+  filter: invert(1) grayscale(100%) brightness(1.6);
+}
+
+[data-bs-theme="dark"] .shadow-sm { box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .45) !important; }
+
+/* Reset para escopos forçados a claro (ex.: área admin) mesmo com o site no escuro.
+   Os seletores acima usam descendência, então "vazam" do <html dark>; estas regras
+   vêm depois e têm a mesma especificidade, então vencem dentro de um data-bs-theme="light". */
+[data-bs-theme="light"] {
+  --primary-color: #9d3b35;
+  --secondary-color: #5f824f;
+  --background-color: #f8faf6;
+  --text-color: #302d2c;
+  --bg-color-ligth: #eef5ea;
+}
+[data-bs-theme="light"] .bg-white { background-color: #fff !important; }
+[data-bs-theme="light"] .bg-light { background-color: #f8f9fa !important; }
+[data-bs-theme="light"] .text-dark { color: #212529 !important; }
+[data-bs-theme="light"] .border,
+[data-bs-theme="light"] .border-top,
+[data-bs-theme="light"] .border-bottom,
+[data-bs-theme="light"] .border-end,
+[data-bs-theme="light"] .border-start { border-color: var(--bs-border-color) !important; }
+
+@media (pointer: coarse) {
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .container,
+  .container-fluid {
+    --bs-gutter-x: 1.25rem;
+  }
+
+  .hero-heading {
+    font-size: clamp(2rem, 11vw, 3rem);
+    line-height: 1.06;
+  }
+
+  .navbar-collapse {
+    max-height: calc(100dvh - 76px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .navbar-nav .nav-link,
+  .navbar-nav .btn {
+    min-height: 46px;
+    display: flex;
+    align-items: center;
+  }
+
+  .site-navbar .navbar-toggler {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .btn:not(.btn-sm):not(.btn-close) {
+    min-height: 44px;
+  }
+
+  .brand-logo {
+    width: 46px;
+    height: 46px;
+  }
+
+  .brand-name { font-size: 0.78rem; }
+  .brand-city { font-size: 0.58rem; }
+
+  .pet-showcase-section {
+    margin-inline: -0.15rem;
+    border-radius: 18px !important;
+    box-shadow: none !important;
+  }
+
+  .pet-showcase-section > .container {
+    padding-inline: 12px;
+  }
+
+  .pet-showcase-section .home-pet-rail {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 14px !important;
+    overflow-x: auto;
+    margin-inline: -12px;
+    padding: 4px 12px 14px;
+    --bs-gutter-x: 0;
+    scroll-padding-inline: 12px;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: thin;
+  }
+
+  .pet-showcase-section .home-pet-rail > .pet-card-column {
+    width: min(82vw, 320px) !important;
+    max-width: min(82vw, 320px);
+    flex: 0 0 min(82vw, 320px);
+    padding-inline: 0;
+    margin-bottom: 0 !important;
+    scroll-snap-align: start;
+  }
+
+  .hero-cta {
+    width: 100%;
+    min-height: 52px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Cor única dos botões: terracota do logo. */
+:root {
+  --button-color: #9d3b35;
+  --button-hover: #7f2f2a;
+  --button-soft: #f4e8e6;
+}
+
+/* Ações principais, incluindo variantes Bootstrap e estilos inline antigos. */
+.btn:not(.btn-link):not(.btn-close):not(.btn-filter-outline):not(.btn-choice-outline) {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--button-color);
+  --bs-btn-border-color: var(--button-color);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--button-hover);
+  --bs-btn-hover-border-color: var(--button-hover);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--button-hover);
+  --bs-btn-active-border-color: var(--button-hover);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: var(--button-color);
+  --bs-btn-disabled-border-color: var(--button-color);
+  background-color: var(--button-color) !important;
+  border-color: var(--button-color) !important;
+  color: #fff !important;
+}
+
+.btn:not(.btn-link):not(.btn-close):not(.btn-filter-outline):not(.btn-choice-outline):hover,
+.btn:not(.btn-link):not(.btn-close):not(.btn-filter-outline):not(.btn-choice-outline):focus-visible,
+.btn:not(.btn-link):not(.btn-close):not(.btn-filter-outline):not(.btn-choice-outline):active {
+  background-color: var(--button-hover) !important;
+  border-color: var(--button-hover) !important;
+  color: #fff !important;
+}
+
+/* Filtros e opções inativas usam contorno da mesma cor para mostrar a seleção. */
+.btn.btn-filter-outline,
+.btn.btn-choice-outline {
+  background-color: transparent !important;
+  border-color: var(--button-color) !important;
+  color: var(--button-color) !important;
+}
+
+.btn.btn-filter-outline:hover,
+.btn.btn-filter-outline:focus-visible,
+.btn.btn-choice-outline:hover,
+.btn.btn-choice-outline:focus-visible {
+  background-color: var(--button-soft) !important;
+  border-color: var(--button-hover) !important;
+  color: var(--button-hover) !important;
+}
+
+.btn.btn-link {
+  --bs-btn-color: var(--button-color);
+  --bs-btn-hover-color: var(--button-hover);
+  --bs-btn-active-color: var(--button-hover);
+  background: transparent !important;
+  color: var(--button-color) !important;
+}
+
+.btn.btn-link:hover,
+.btn.btn-link:focus-visible {
+  color: var(--button-hover) !important;
+}

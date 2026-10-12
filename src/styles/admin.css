@@ -1,0 +1,39 @@
+/* ===== Admin Dashboard — apenas o que o Bootstrap não cobre =====
+   A estrutura usa grid/utilitários do Bootstrap + componentes do React Bootstrap.
+   Cores da marca vêm de var(--primary-color)/var(--secondary-color) inline (mesmo
+   padrão do site principal). Aqui ficam só especificidades: sidebar, nav ativo,
+   donut e o tom de destaque. */
+
+/* Layout / sidebar (Bootstrap não tem primitiva de sidebar) */
+.admin-sidebar-col { width: 240px; flex-shrink: 0; }
+.admin-sidebar { position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+
+/* Itens de navegação do painel; destaque na cor única dos botões. */
+.admin-nav {
+    border: 0;
+    background: transparent;
+    color: var(--button-color);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background .15s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+    .admin-nav:hover:not(.active) { background: var(--button-soft); }
+}
+.admin-nav.active { background: var(--button-soft); color: var(--button-color); font-weight: 600; }
+
+.admin-menu-toggle { width: 44px; height: 44px; }
+
+@media (max-width: 767.98px) {
+    .admin-shell .btn-sm { min-width: 44px; min-height: 44px; }
+}
+
+/* Avatar/thumbnail das linhas e do destaque */
+.admin-thumb { width: 36px; height: 36px; object-fit: cover; }
+
+/* Áreas clicáveis (abrem o popup de visualização) */
+.admin-rowname, .admin-agenda-row { cursor: pointer; }
+@media (hover: hover) and (pointer: fine) {
+    .admin-rowname:hover .admin-rowname-title,
+    .admin-agenda-row:hover .admin-agenda-title { color: var(--primary-color) !important; }
+}

@@ -1,0 +1,25 @@
+/* 
+Estilização dos botões de filtro do catálogo
+*/
+/* Botão quando NÃO está selecionado */
+.btn-filter-outline {
+    background-color: transparent !important;
+    color: var(--button-color) !important;
+    border: 1px solid var(--button-color) !important;
+}
+
+/* Botão quando ESTÁ selecionado */
+.btn-filter-active {
+    background-color: var(--button-color) !important;
+    color: #ffffff !important;
+    border-color: var(--button-color) !important;
+}
+
+/* Efeito ao passar o mouse */
+@media (hover: hover) and (pointer: fine) {
+  .btn-filter-outline:hover {
+    background-color: var(--button-soft) !important;
+    color: var(--button-hover) !important;
+    border-color: var(--button-hover) !important;
+  }
+}

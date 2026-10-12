@@ -1,0 +1,6 @@
+.rotate-left { transform: rotate(-3deg); }
+.rotate-right { transform: rotate(3deg); }
+.polaroid img { 
+    aspect-ratio: 1/1; 
+    object-fit: cover; 
+}

@@ -1,0 +1,137 @@
+.pet-card {
+  --pet-card-radius: 22px;
+  border-radius: var(--pet-card-radius);
+  background: var(--surface-color);
+  box-shadow: var(--card-shadow);
+  cursor: pointer;
+  transition: transform 160ms ease-out, box-shadow 160ms ease-out;
+  isolation: isolate;
+}
+
+.pet-card:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--primary-color) 35%, transparent);
+  outline-offset: 3px;
+}
+
+.pet-card:active {
+  transform: scale(0.985);
+}
+
+.pet-card-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--secondary-soft);
+}
+
+.pet-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 280ms ease-out;
+}
+
+.pet-card-image--fallback {
+  object-fit: contain;
+  padding: 12%;
+}
+
+.pet-card-status {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 6px 11px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--secondary-color);
+  box-shadow: 0 4px 16px rgba(47, 45, 44, 0.12);
+  font-size: 0.75rem;
+  font-weight: 700;
+  backdrop-filter: blur(8px);
+}
+
+.pet-card-body {
+  gap: 12px;
+  padding: 18px;
+}
+
+.pet-card-name {
+  margin: 0;
+  color: var(--text-color);
+  font-size: clamp(1.15rem, 4vw, 1.35rem);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.pet-card-traits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 4px;
+}
+
+.pet-card-traits span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 30px;
+  padding: 5px 9px;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background: var(--secondary-soft);
+  color: var(--text-color);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.pet-card-traits i {
+  color: var(--primary-color);
+}
+
+.pet-card-cta {
+  min-height: 46px;
+  border-radius: 12px;
+  font-size: 0.88rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .pet-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-shadow-hover);
+  }
+
+  .pet-card:hover .pet-card-image {
+    transform: scale(1.045);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .pet-card-column {
+    padding-inline: 0;
+  }
+
+  .pet-card {
+    --pet-card-radius: 18px;
+  }
+
+  .pet-card-body {
+    padding: 16px;
+  }
+}
+
+@media (min-width: 992px) {
+  .pet-card-media {
+    aspect-ratio: 1 / 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pet-card,
+  .pet-card-image {
+    transition: none;
+  }
+}

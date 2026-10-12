@@ -1,0 +1,12 @@
+.catalog-hero-image.img-fluid {
+  height: clamp(280px, 44vw, 520px);
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 575.98px) {
+  .catalog-hero-image.img-fluid {
+    height: 180px;
+    object-position: center;
+  }
+}
